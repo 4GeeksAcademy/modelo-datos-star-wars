@@ -80,9 +80,9 @@ class Favorito(db.Model):
     usuario_id: Mapped[int] = mapped_column(
         Integer, ForeignKey("user.id"), nullable=False)
     planeta_id: Mapped[int] = mapped_column(
-        Integer, ForeignKey("planeta.id"), nullable=False)
+        Integer, ForeignKey("planeta.id"), nullable=True)
     personaje_id: Mapped[int] = mapped_column(
-        Integer, ForeignKey("personaje.id"), nullable=False)
+        Integer, ForeignKey("personaje.id"), nullable=True)
     fecha_guardado: Mapped[date] = mapped_column(Date, default=date.today)
 
     usuario = relationship("User", back_populates="favoritos")
